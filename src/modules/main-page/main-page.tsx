@@ -7,23 +7,22 @@ import {MountainsSchedule} from "../../components/mountains-schedule/mountains-s
 
 export const MainPage = () =>{
     const slides = [
-        {src: "./img/carousel_example_1.png", alt: "Slide 1"},
-        {src: "./img/carousel_example_2.png", alt: "Slide 2"},
-        {src: "./img/carousel_example_1.png", alt: "Slide 3"},
-        {src: "./img/carousel_example_2.png", alt: "Slide 4"},
-        {src: "./img/carousel_example_1.png", alt: "Slide 2"},
-        {src: "./img/carousel_example_2.png", alt: "Slide 1"},
-        {src: "./img/carousel_example_1.png", alt: "Slide 3"},
-        {src: "./img/carousel_example_2.png", alt: "Slide 4"},
-        {src: "./img/carousel_example_1.png", alt: "Slide 1"},
-        {src: "./img/carousel_example_2.png", alt: "Slide 3"},
-        {src: "./img/carousel_example_1.png", alt: "Slide 2"},
-        {src: "./img/carousel_example_2.png", alt: "Slide 4"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 1"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 2"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 3"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 4"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 1"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 2"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 3"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 4"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 1"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 2"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 3"},
+        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 4"},
     ];
     const mountainsSchedule = [
         {
             title: "Mountain 1",
-            backgroundImg: "/img/mountain_1.png",
             schedule: [
                 {
                     day: 25,
@@ -49,11 +48,12 @@ export const MainPage = () =>{
                     year: 2017,
                     title: "Vestibulum viverra"
                 },
-            ]
+            ],
+            backgroundImg: `${process.env.PUBLIC_URL}/img/mountain_1.png`
         },
         {
             title: "Mountain 2",
-            backgroundImg: "/img/mountain_1.png",
+            backgroundImg: `${process.env.PUBLIC_URL}/img/mountain_2.png`,
             schedule: [
                 {
                     day: 17,
@@ -115,10 +115,10 @@ export const MainPage = () =>{
               </nav>
           </header>
           <main>
-              <section className='logo-background' style={{backgroundImage: `url("./img/mountains_logo.png")`, backgroundSize: "cover"}}>
+              <section className='logo-background' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_logo.png")`, backgroundSize: "cover"}}>
 
               </section>
-              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("./img/mountains_history.png")`, backgroundSize: "cover"}}>
+              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_history.png")`, backgroundSize: "cover"}}>
                   <div className='history-container'>
                       <div className='history-title'>
                           <h2>History</h2>

@@ -19,7 +19,7 @@ export const Logo = ()=>{
     return(
         <div className='logo-wrapper' onClick={()=>scorllOnTop()}>
             <div className='logo-container'>
-                <img src="/img/logo.png" alt=""/>
+                <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt=""/>
             </div>
             {logoTitle ? <div className='company-name'>
                 <span>LOSANGELES</span>
