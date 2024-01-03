@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/losangeles-mountains/static/css/main.84e2ecc5.css",
-    "main.js": "/losangeles-mountains/static/js/main.a11692ee.js",
+    "main.css": "/losangeles-mountains/static/css/main.f0596cf9.css",
+    "main.js": "/losangeles-mountains/static/js/main.2a33f52d.js",
     "static/media/MYRIADPRO-REGULAR.woff": "/losangeles-mountains/static/media/MYRIADPRO-REGULAR.d30b05461519da431d12.woff",
     "index.html": "/losangeles-mountains/index.html",
-    "main.84e2ecc5.css.map": "/losangeles-mountains/static/css/main.84e2ecc5.css.map",
-    "main.a11692ee.js.map": "/losangeles-mountains/static/js/main.a11692ee.js.map"
+    "main.f0596cf9.css.map": "/losangeles-mountains/static/css/main.f0596cf9.css.map",
+    "main.2a33f52d.js.map": "/losangeles-mountains/static/js/main.2a33f52d.js.map"
   },
   "entrypoints": [
-    "static/css/main.84e2ecc5.css",
-    "static/js/main.a11692ee.js"
+    "static/css/main.f0596cf9.css",
+    "static/js/main.2a33f52d.js"
   ]
 }
