@@ -28,7 +28,7 @@ export const MountainsSchedule = ({mountainsList}: {mountainsList: MountainsArra
                    })
                }
            </div>
-           <section className='mountain-schedule' style={{backgroundImage: 'url(' + mountainsList[activeIndex].backgroundImg + ')', backgroundSize: "cover"}}>
+           <section className='mountain-schedule' style={{backgroundImage: 'url(' + mountainsList[activeIndex].backgroundImg + ')', backgroundSize: "cover", backgroundPositionX: "center"}}>
                <div className='schedule-container'>
                    <h2>SCHEDULE</h2>
                    {

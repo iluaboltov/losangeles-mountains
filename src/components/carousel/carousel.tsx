@@ -21,10 +21,8 @@ export const Carousel = ({
     }, [images.length]);
 
     const handleNext = useCallback(() => {
-        setActiveIndex((prevIndex) =>
-            prevIndex === images.length - 4 ? 0 : activeIndex + 4
-        );
-    }, [images.length, activeIndex]);
+        setActiveIndex((activeIndex)=> activeIndex === images.length - 4 ? 0 : activeIndex + 4)
+    }, [images.length]);
 
     const handleKeyDown = (event: React.KeyboardEvent) => {
         if (event.key === 'ArrowRight') {
@@ -36,18 +34,10 @@ export const Carousel = ({
 
     useEffect(() => {
         const timer = setInterval(() => {
-                handleNext();
-        }, 4000);
-        return () => clearInterval(timer);
-    }, [handleNext]);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
             handleNext();
-        }, 5000);
+        }, 100);
         return () => clearInterval(timer);
     }, [handleNext]);
-    console.log(activeIndex)
     return (
         <div className='carousel-wrapper' onKeyDown={handleKeyDown}>
                 <div className='carousel-items'>

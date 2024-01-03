@@ -115,10 +115,10 @@ export const MainPage = () =>{
               </nav>
           </header>
           <main>
-              <section className='logo-background' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_logo.png")`, backgroundSize: "cover"}}>
+              <section className='logo-background' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_logo.png")`, backgroundSize: "cover", backgroundPositionX: "40%"}}>
 
               </section>
-              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_history.png")`, backgroundSize: "cover"}}>
+              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_history.png")`, backgroundSize: "cover", backgroundPositionX: "center"}}>
                   <div className='history-container'>
                       <div className='history-title'>
                           <h2>History</h2>
