@@ -35,7 +35,7 @@ export const Carousel = ({
     useEffect(() => {
         const timer = setInterval(() => {
             handleNext();
-        }, 100);
+        }, 5000);
         return () => clearInterval(timer);
     }, [handleNext]);
     return (
