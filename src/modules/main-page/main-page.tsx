@@ -7,18 +7,18 @@ import {MountainsSchedule} from "../../components/mountains-schedule/mountains-s
 
 export const MainPage = () =>{
     const slides = [
-        {src: "/img/carousel_example_1.png", alt: "Slide 1"},
-        {src: "/img/carousel_example_2.png", alt: "Slide 2"},
-        {src: "/img/carousel_example_1.png", alt: "Slide 3"},
-        {src: "/img/carousel_example_2.png", alt: "Slide 4"},
-        {src: "/img/carousel_example_1.png", alt: "Slide 2"},
-        {src: "/img/carousel_example_2.png", alt: "Slide 1"},
-        {src: "/img/carousel_example_1.png", alt: "Slide 3"},
-        {src: "/img/carousel_example_2.png", alt: "Slide 4"},
-        {src: "/img/carousel_example_1.png", alt: "Slide 1"},
-        {src: "/img/carousel_example_2.png", alt: "Slide 3"},
-        {src: "/img/carousel_example_1.png", alt: "Slide 2"},
-        {src: "/img/carousel_example_2.png", alt: "Slide 4"},
+        {src: "./img/carousel_example_1.png", alt: "Slide 1"},
+        {src: "./img/carousel_example_2.png", alt: "Slide 2"},
+        {src: "./img/carousel_example_1.png", alt: "Slide 3"},
+        {src: "./img/carousel_example_2.png", alt: "Slide 4"},
+        {src: "./img/carousel_example_1.png", alt: "Slide 2"},
+        {src: "./img/carousel_example_2.png", alt: "Slide 1"},
+        {src: "./img/carousel_example_1.png", alt: "Slide 3"},
+        {src: "./img/carousel_example_2.png", alt: "Slide 4"},
+        {src: "./img/carousel_example_1.png", alt: "Slide 1"},
+        {src: "./img/carousel_example_2.png", alt: "Slide 3"},
+        {src: "./img/carousel_example_1.png", alt: "Slide 2"},
+        {src: "./img/carousel_example_2.png", alt: "Slide 4"},
     ];
     const mountainsSchedule = [
         {
@@ -115,10 +115,10 @@ export const MainPage = () =>{
               </nav>
           </header>
           <main>
-              <section className='logo-background' style={{backgroundImage: `url("img/mountains_logo.png")`, backgroundSize: "cover"}}>
+              <section className='logo-background' style={{backgroundImage: `url("./img/mountains_logo.png")`, backgroundSize: "cover"}}>
 
               </section>
-              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("img/mountains_history.png")`, backgroundSize: "cover"}}>
+              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("./img/mountains_history.png")`, backgroundSize: "cover"}}>
                   <div className='history-container'>
                       <div className='history-title'>
                           <h2>History</h2>

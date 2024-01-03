@@ -47,6 +47,7 @@ export const Carousel = ({
         }, 5000);
         return () => clearInterval(timer);
     }, [handleNext]);
+    console.log(activeIndex)
     return (
         <div className='carousel-wrapper' onKeyDown={handleKeyDown}>
                 <div className='carousel-items'>
@@ -73,8 +74,6 @@ export const Carousel = ({
                                         index === activeIndex ? 'active' : ''
                                     }`}
                                     onClick={() => setActiveIndex(index)}
-                                    // aria-label={`Go to slide ${index + 1}`}
-                                    // aria-selected={index === activeIndex}
                                 ></button>
                             )
                         }
