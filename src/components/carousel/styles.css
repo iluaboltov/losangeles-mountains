@@ -1,0 +1,52 @@
+.carousel-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 24%;
+    background-color: rgba(65, 79, 107, 0.4);
+    animation: slideIn 1s ease-in-out;
+}
+@keyframes slideIn{
+     from{
+         margin: -100%;
+     }
+    to {
+        margin: 0   ;
+    }
+}
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-item:not(:last-child){
+    padding-right: 0.8em ;
+}
+.carousel-img {
+    max-width: 100%;
+    display: block;
+    flex-shrink: 0;
+}
+.carousel-pagination {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    z-index: 1000;
+}
+
+.pagination-indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+
+.pagination-indicator.active {
+    background-color: rgba(255, 255, 255, 1);
+}

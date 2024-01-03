@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: local('MyriadPro-Regular'), url(../../fonts/MYRIADPRO-REGULAR.woff) format('woff');
+}
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    scroll-padding: 2.4em;
+}
+a{
+    all: unset;
+}
+button{
+    border: 0;
+    background: none;
+}
+h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.7em;
+    color: #414f6b;
+}
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 4em;
+    z-index: 1000;
+    transition: background-color 400ms ease-in-out;
+}
+footer{
+    background-color: #414f6b;
+}
+.active-background{
+    background-color: #ffffff;
+}
+nav{
+    min-width: 14rem;
+    height: 4rem;
+    color: #ffffff;
+    font-family: 'MyriadPro-Regular', serif;
+    font-size: 1em;
+}
+header.active-background nav{
+    color: #414f6b;
+}
+header.active-background ol li:hover:after{
+    background-color: #414f6b;
+}
+ol{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+ol li{
+    counter-increment: num;
+    position: relative;
+    width: auto;
+    padding-right: 0.4em;
+    font-size: 1em;
+    font-style: italic;
+    font-family: Lato, sans-serif;
+}
+ol li::before{
+    content: '0' counter(num) '. ';
+}
+ol li:after{
+    content: '';
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffffff;
+    transition: width 500ms ease-in-out;
+}
+ol li:hover:after{
+    width: 100%;
+}
+.mountains{
+    width: 1000px;
+    height: 1000px;
+}
+.logo-background{
+    width: 100%;
+    height: 100vh;
+}
+.history{
+    display: flex;
+    width: 100%;
+    height: 60rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.history-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+.history-title{
+    position: relative;
+    padding: 6rem 0 1.5rem 2rem;
+}
+.history-title:before{
+    content: '01.';
+    position: absolute;
+    top: 0.12em;
+    left: -0.72em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 8.3em;
+    color: #6d7c97;
+}
+.history-article{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+}
+.climb-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    padding: 2em 0 2em 0;
+}
+.climb-title{
+    position: relative;
+    padding: 2em 0 0 0;
+}
+.climb-title:before{
+    content: '02.';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 8.3em;
+    color: #6d7c97;
+
+}
+.climb-article{
+    width: 40%;
+    padding: 0 0 0 2em;
+    font-family: 'Lato', sans-serif;
+}
+.footer-text{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+.footer-content{
+    display: flex;
+    color: #ffffff;
+    padding: 1em 0 1em 0;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 30%;
+}
+@media only screen and (min-width: 20em) {
+    h2{
+        font-size: 2.3em;
+    }
+    .history-article{
+        font-size: 0.9em;
+    }
+    .history-title:before{
+        font-size: 6.2em;
+        top: 0.4em;
+        left: -0.64em;
+    }
+    .climb-article{
+        padding: 0 0 0 0.8em;
+    }
+    .climb-title{
+        padding: 0.8em 0 0 0;
+    }
+    .climb-title:before{
+        font-size: 5.2em;
+        top: -34%;
+        left: -94%;
+    }
+    .carousel-wrapper{
+        height: 14%;
+    }
+    .footer-text{
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (min-width: 40em) {
+    h2{
+        font-size: 2.3em;
+    }
+    .history-article{
+        font-size: 1em;
+    }
+    .history-title:before{
+        font-size: 7em;
+        top: 0.24em;
+        left: -0.67em;
+    }
+    .climb-title:before{
+        font-size: 7em;
+        top: -82%;
+        left: -128%;
+    }
+    .carousel-wrapper{
+        height: 16%;
+    }
+    .footer-text{
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    h2{
+        font-size: 2.4em;
+    }
+    .history-article{
+        font-size: 1.1em;
+
+    }
+    .history-title:before{
+        font-size: 7.4em;
+        top: 0.2em;
+        left: -0.69em;
+    }
+    .climb-title:before{
+        font-size: 7.4em;
+    }
+    .carousel-wrapper{
+        height: 18%;
+    }
+    .footer-text{
+        font-size: 0.8em;
+    }
+
+}
+
+@media only screen and (min-width: 64em) {
+    h2{
+        font-size: 2.5em;
+    }
+    .history-article{
+        font-size: 1.2em;
+    }
+    .history-title:before{
+        font-size: 7.8em;
+        top: 0.16em;
+        left: -0.7em;
+    }
+    .climb-title:before{
+        font-size: 7.8em;
+        top: -88%;
+        left: -131%;
+    }
+    .carousel-wrapper{
+        height: 20%;
+    }
+    .footer-text{
+        font-size: 0.9em;
+    }
+
+}
+
+@media only screen and (min-width: 80em) {
+    h2{
+        font-size: 2.6em;
+    }
+    .history-article{
+        font-size: 1.3em;
+    }
+    .history-title:before{
+        font-size: 8em;
+    }
+    .climb-title:before{
+        font-size: 8em;
+    }
+}
