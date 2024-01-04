@@ -1,124 +1,59 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from 'react'
 
-import {Logo} from "../../components/logo/logo";
-import {Carousel} from "../../components/carousel/carousel";
-import "./styles.css"
-import {MountainsSchedule} from "../../components/mountains-schedule/mountains-schedule";
+import { slides } from '../../contants/carouselSlides'
+import { schedule } from '../../contants/mountainSchedule'
+import { Logo } from '../../components/logo/logo'
+import { Carousel } from '../../components/carousel/carousel'
+import './styles.css'
+import { MountainsSchedule } from '../../components/mountains-schedule/mountains-schedule'
 
-export const MainPage = () =>{
-    const slides = [
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 1"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 2"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 3"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 4"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 1"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 2"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 3"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 4"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 1"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_1.png`, alt: "Slide 2"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 3"},
-        {src: `${process.env.PUBLIC_URL}/img/carousel_example_2.png`, alt: "Slide 4"},
-    ];
-    const mountainsSchedule = [
-        {
-            title: "Mountain 1",
-            schedule: [
-                {
-                    day: 25,
-                    month: "Nov",
-                    year: 2016,
-                    title: "Vestibulum viverra"
-                },
-                {
-                    day: 28,
-                    month: "Nov",
-                    year: 2016,
-                    title: "Vestibulum viverra"
-                },
-                {
-                    day: 18,
-                    month: "Dec",
-                    year: 2016,
-                    title: "Vestibulum viverra"
-                },
-                {
-                    day: 7,
-                    month: "Jan",
-                    year: 2017,
-                    title: "Vestibulum viverra"
-                },
-            ],
-            backgroundImg: `${process.env.PUBLIC_URL}/img/mountain_1.png`
-        },
-        {
-            title: "Mountain 2",
-            backgroundImg: `${process.env.PUBLIC_URL}/img/mountain_2.png`,
-            schedule: [
-                {
-                    day: 17,
-                    month: "Nov",
-                    year: 2016,
-                    title: "Vestibulum viverra"
-                },
-                {
-                    day: 13,
-                    month: "Dec",
-                    year: 2016,
-                    title: "Vestibulum viverra"
-                },
-                {
-                    day: 28,
-                    month: "Dec",
-                    year: 2016,
-                    title: "Vestibulum viverra"
-                },
-                {
-                    day: 9,
-                    month: "Jan",
-                    year: 2017,
-                    title: "Vestibulum viverra"
-                },
-            ]
-        }
-    ]
-    const [headerBackground, setHeader] = useState(false);
-    const historySectionRef = useRef(null)
-    const teamSectionRef = useRef(null)
-    const changeHeader = () => {
-        if (window.scrollY >= 250) {
-            setHeader(true)
-        } else {
-            setHeader(false)
-        }
+export const MainPage: React.FC = () => {
+  const [headerActive, setHeader] = useState(false)
+  const historySectionRef = useRef<HTMLDivElement>(null)
+  const teamSectionRef = useRef<HTMLDivElement>(null)
+  const entrySectionRef = useRef<HTMLDivElement>(null)
+  const updateHeader = (): void => {
+    const entry = entrySectionRef.current
+    if (entry != null) {
+      const rect = entry.getBoundingClientRect()
+      console.log(rect.top)
+      if (rect.top <= -150) {
+        setHeader(true)
+      } else {
+        setHeader(false)
+      }
     }
-    useEffect(() => {
-        changeHeader()
-        window.addEventListener("scroll", changeHeader)
-    })
-    const scrollToSection = (sectionRef: React.MutableRefObject<any>) => {
-        sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-    return(
+  }
+  useEffect(() => {
+    document.body.addEventListener('scroll', updateHeader)
+
+    return () => { document.body.removeEventListener('scroll', updateHeader) }
+  }, [])
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>): void => {
+    if(sectionRef.current !== null){
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+  return (
       <div>
-          <header className={headerBackground ? 'active-background': ''}>
-              <Logo/>
+          <header className={headerActive ? 'active-background' : ''}>
+              <Logo nameActive={headerActive}/>
               <nav>
                   <ol>
-                         <li onClick={()=>scrollToSection(historySectionRef)}>
+                         <li onClick={() => { scrollToSection(historySectionRef) }}>
                              HISTORY
                          </li>
-                          <li onClick={()=>scrollToSection(teamSectionRef)}>
+                          <li onClick={() => { scrollToSection(teamSectionRef) }}>
                               TEAM
                           </li>
                   </ol>
               </nav>
           </header>
           <main>
-              <section className='logo-background' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_logo.png")`, backgroundSize: "cover", backgroundPositionX: "40%"}}>
+              <section ref={entrySectionRef} className='logo-background' style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_logo.png")`, backgroundSize: 'cover', backgroundPositionX: '40%' }}>
 
               </section>
-              <article ref={historySectionRef} className='history' style={{backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_history.png")`, backgroundSize: "cover", backgroundPositionX: "center"}}>
+              <article ref={historySectionRef} className='history' style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/img/mountains_history.png")`, backgroundSize: 'cover', backgroundPositionX: 'center' }}>
                   <div className='history-container'>
                       <div className='history-title'>
                           <h2>History</h2>
@@ -142,7 +77,7 @@ export const MainPage = () =>{
                           </p>
                       </div>
                   </div>
-                  <MountainsSchedule mountainsList={mountainsSchedule}/>
+                  <MountainsSchedule mountainsList={schedule}/>
               </article>
           </main>
           <footer>
@@ -152,5 +87,5 @@ export const MainPage = () =>{
                 </div>
           </footer>
       </div>
-    );
+  )
 }

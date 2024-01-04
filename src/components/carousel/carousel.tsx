@@ -36,21 +36,21 @@ export const Carousel = ({
         const timer = setInterval(() => {
             handleNext();
         }, 5000);
-        return () => clearInterval(timer);
+        return () => { clearInterval(timer); };
     }, [handleNext]);
     return (
         <div className='carousel-wrapper' onKeyDown={handleKeyDown}>
                 <div className='carousel-items'>
-                    <div className={`carousel-item`} >
+                    <div className={'carousel-item'} >
                         <img className='carousel-img' src={images[activeIndex].src} alt={images[activeIndex].alt} />
                     </div>
-                    <div className={`carousel-item`} >
+                    <div className={'carousel-item'} >
                         <img className='carousel-img' src={images[activeIndex+1].src} alt={images[activeIndex+1].alt} />
                     </div>
-                    <div className={`carousel-item`}>
+                    <div className={'carousel-item'}>
                         <img className='carousel-img' src={images[activeIndex+2].src} alt={images[activeIndex+2].alt} />
                     </div>
-                    <div className={`carousel-item`}>
+                    <div className={'carousel-item'}>
                         <img className='carousel-img' src={images[activeIndex+3].src} alt={images[activeIndex+3].alt} />
                     </div>
                 </div>
@@ -63,7 +63,7 @@ export const Carousel = ({
                                     className={`pagination-indicator ${
                                         index === activeIndex ? 'active' : ''
                                     }`}
-                                    onClick={() => setActiveIndex(index)}
+                                    onClick={() => { setActiveIndex(index); }}
                                 ></button>
                             )
                         }

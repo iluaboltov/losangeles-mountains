@@ -16,6 +16,13 @@
     padding-inline-start: 0;
     scroll-padding: 2.4em;
 }
+html, body{
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
 a{
     all: unset;
 }
@@ -70,10 +77,12 @@ ol li{
     counter-increment: num;
     position: relative;
     width: auto;
-    padding-right: 0.4em;
     font-size: 1em;
     font-style: italic;
     font-family: Lato, sans-serif;
+}
+ol li:first-child{
+    padding-right: 0.4em;
 }
 ol li::before{
     content: '0' counter(num) '. ';
@@ -135,6 +144,7 @@ ol li:hover:after{
     justify-content: center;
     align-items: center;
     height: 10rem;
+    min-width: 480px;
     padding: 2em 0 2em 0;
 }
 .climb-title{
@@ -169,12 +179,99 @@ ol li:hover:after{
     align-items: center;
     opacity: 30%;
 }
-@media only screen and (max-width: 20em) {
-
+@media screen and (min-width: 320px) {
+    h2{
+        font-size: 2.4em;
+    }
+    header{
+        width: 100vw;
+        justify-content: space-between;
+    }
+    nav{
+        min-width: 12rem;
+    }
+    .logo-wrapper{
+        width: 5rem;
+        padding: 0 0 0 1rem;
+    }
+    .logo-container img{
+        width: 25px;
+        height: 25px;
+    }
+    .company-name{
+        line-height: 0.8rem;
+    }
+    .company-name span{
+        font-size: 1em;
+    }
+    ol{
+        width: 72%;
+    }
+    ol li{
+        font-size: 0.8em;
+    }
+    .history-title{
+        margin: 0 0 0 1em;
+    }
+    .history-article{
+        font-size: 0.8em;
+    }
+    .history-title:before{
+        font-size: 6.3em;
+        top: 0.5em;
+        left: -0.64em;
+    }
+    .carousel-wrapper{
+        height: 10%;
+    }
+    .climb-container{
+        flex-direction: column;
+        height: 14rem;
+        min-width: 100%;
+    }
+    .climb-article{
+        width: auto;
+        padding: 1em 0 0 2em;
+    }
+    .climb-title{
+        margin: 0 0 0 4em;
+    }
+    .climb-title:before{
+        font-size: 6.3em;
+        top: -0.2em;
+        left: -1.09em;
+    }
+    .schedule-navigation{
+        padding: 0;
+    }
+    div.schedule-container{
+        top: 10%;
+        left: 0;
+        width: 100%;
+    }
+    div.date-container{
+        font-size: 1rem;
+    }
+    .footer-text{
+        font-size: 0.4em;
+    }
 }
-@media only screen and (min-width: 20em) {
+@media screen and (min-width: 375px) {
     h2{
         font-size: 2.3em;
+    }
+    .logo-container img{
+        width: 35px;
+        height: 35px;
+    }
+    .company-name{
+        line-height: 0.8em;
+    }
+    .company-name span{
+        font-size: 1em;
+    }
+    ol{
+        width: 85%;
     }
     .history-article{
         font-size: 0.9em;
@@ -185,7 +282,7 @@ ol li:hover:after{
         left: -0.64em;
     }
     .climb-article{
-        padding: 0 0 0 0.8em;
+        padding: 1em 0 0 0.8em;
     }
     .climb-title{
         padding: 0.8em 0 0 0;
@@ -198,14 +295,23 @@ ol li:hover:after{
     .carousel-wrapper{
         height: 14%;
     }
+    .schedule-container{
+        left: 0;
+
+    }
     .footer-text{
         font-size: 0.7em;
     }
 }
-
-@media only screen and (min-width: 40em) {
+@media screen and (min-width: 425px) {
     h2{
         font-size: 2.3em;
+    }
+    .company-name{
+        line-height: 1em;
+    }
+    .company-name span{
+        font-size: 1.4em;
     }
     .history-article{
         font-size: 1em;
@@ -227,14 +333,27 @@ ol li:hover:after{
         font-size: 0.7em;
     }
 }
-
-@media only screen and (min-width: 48em) {
+@media screen and (min-width: 768px) {
     h2{
         font-size: 2.4em;
     }
+    header{
+        justify-content: space-around;
+    }
+    nav{
+        min-width: 14rem;
+    }
+    ol{
+        width: 100%;
+    }
+    ol li{
+        font-size: 1em;
+    }
+    .company-name span{
+        font-size: 1.4em;
+    }
     .history-article{
         font-size: 1.1em;
-
     }
     .history-title:before{
         font-size: 7.4em;
@@ -244,6 +363,21 @@ ol li:hover:after{
     .climb-title:before{
         font-size: 7.4em;
     }
+    .climb-container{
+        flex-direction: row;
+    }
+    .climb-article{
+        width: 40%;
+        padding: 0 0 0 1.4em;
+    }
+    div.schedule-container{
+        top: 20%;
+        left: 10%;
+        width: 40%;
+    }
+    .date-container span:last-child{
+        padding: 0;
+    }
     .carousel-wrapper{
         height: 18%;
     }
@@ -252,10 +386,22 @@ ol li:hover:after{
     }
 
 }
-
-@media only screen and (min-width: 64em) {
+@media screen and (min-width: 1024px) {
     h2{
         font-size: 2.5em;
+    }
+    .logo-container img{
+        width: 45px;
+        height: 45px;
+    }
+    .company-name{
+        line-height: 1.4em;
+    }
+    .company-name span{
+        font-size: 1.8em;
+    }
+    ol li{
+        font-size: 1.2em;
     }
     .history-article{
         font-size: 1.2em;
@@ -267,21 +413,33 @@ ol li:hover:after{
     }
     .climb-title:before{
         font-size: 7.8em;
-        top: -88%;
-        left: -131%;
+        top: -0.5em;
+        left: -1.1em;
+    }
+    .climb-article{
+        width: 55%;
+        font-size: 1.2em;
     }
     .carousel-wrapper{
         height: 20%;
     }
+    .schedule-container{
+        width: 55%;
+    }
+    div.date-container{
+        font-size: 1.4rem;
+    }
     .footer-text{
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
 }
-
-@media only screen and (min-width: 80em) {
+@media screen and (min-width: 1440px) {
     h2{
         font-size: 2.6em;
+    }
+    nav{
+        min-width: 18rem;
     }
     .history-article{
         font-size: 1.3em;
@@ -291,5 +449,67 @@ ol li:hover:after{
     }
     .climb-title:before{
         font-size: 8em;
+    }
+}
+@media screen and (min-width: 2560px){
+   h2{
+       font-size: 5rem;
+   }
+    .logo-container img{
+        width: 105px;
+        height: 105px;
+    }
+    .company-name{
+        line-height: 3.4em;
+    }
+    .company-name span{
+        font-size: 4em;
+    }
+    nav{
+        min-width: 38rem;
+    }
+    ol li{
+        font-size: 3em;
+    }
+    .history{
+        height: 100vh;
+    }
+    .history-title{
+        padding: 10rem 0 1.5rem 2rem;
+    }
+    .history-title:before{
+        font-size: 12em;
+        top: 0.36em;
+        left: -0.8em;
+    }
+    .history-article{
+        font-size: 2.4em;
+    }
+    .carousel-img{
+        width: 25em;
+    }
+    .climb-title:before{
+        font-size: 12em;
+        top: -0.42em;
+        left: -1.1em;
+    }
+    .climb-article{
+        font-size: 2em;
+    }
+    div.schedule-button{
+        font-size: 4.7em;
+    }
+    div.schedule-container{
+        width: 40%;
+        padding: 2.8em 4em 1em 4em;
+    }
+    div.schedule-container h2{
+        font-size: 6rem;
+    }
+    div.date-container{
+        font-size: 3rem;
+    }
+    .footer-text{
+        font-size: 1.8em;
     }
 }

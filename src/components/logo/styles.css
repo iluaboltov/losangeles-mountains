@@ -6,15 +6,13 @@
     align-items: center;
     cursor: pointer;
 }
-.logo-container{
+.logo-container img{
     height: 45px;
     width: 45px;
 }
 .company-name{
     width: 100%;
     height: 100%;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8em;
     line-height: 1.5rem;
     padding: 0.2em 0 0 0.2em;
     animation: fadeIn 1s ease-in-out;
@@ -29,6 +27,8 @@
 }
 .company-name span{
     display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8em;
 }
 .company-name span:first-child{
     color: #4d4d4d;

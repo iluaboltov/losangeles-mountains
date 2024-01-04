@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import './styles.css'
 type ScheduleType = {
     day: number,
@@ -19,7 +19,7 @@ export const MountainsSchedule = ({mountainsList}: {mountainsList: MountainsArra
                {
                    mountainsList.map((mountain, index) =>{
                        return(
-                           <button onClick={()=> setActiveIndex(index)}  key={index}>
+                           <button onClick={()=> { setActiveIndex(index); }}  key={index}>
                                <div className={activeIndex === index ? 'schedule-button active-button' : 'schedule-button'}>
                                    {mountain.title}
                                </div>
@@ -28,14 +28,14 @@ export const MountainsSchedule = ({mountainsList}: {mountainsList: MountainsArra
                    })
                }
            </div>
-           <section className='mountain-schedule' style={{backgroundImage: 'url(' + mountainsList[activeIndex].backgroundImg + ')', backgroundSize: "cover", backgroundPositionX: "center"}}>
+           <section className='mountain-schedule' style={{backgroundImage: 'url(' + mountainsList[activeIndex].backgroundImg + ')', backgroundSize: 'cover', backgroundPositionX: 'center'}}>
                <div className='schedule-container'>
                    <h2>SCHEDULE</h2>
                    {
                        mountainsList[activeIndex].schedule.map((date, index)=>{
                            let activePadding = true;
-                           let currMonth = mountainsList[activeIndex].schedule[index].month;
-                           let nextMonth = (mountainsList[activeIndex].schedule.length-1 !== index) && mountainsList[activeIndex].schedule[index+1].month ? mountainsList[activeIndex].schedule[index+1].month : "Nothing"
+                           const currMonth = mountainsList[activeIndex].schedule[index].month;
+                           const nextMonth = (mountainsList[activeIndex].schedule.length-1 !== index) && (mountainsList[activeIndex].schedule[index+1].month !== '') ? mountainsList[activeIndex].schedule[index+1].month : 'Nothing'
                            if(currMonth === nextMonth){
                                activePadding = !activePadding
                            }
