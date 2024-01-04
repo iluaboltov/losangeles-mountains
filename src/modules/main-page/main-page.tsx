@@ -16,7 +16,6 @@ export const MainPage: React.FC = () => {
     const entry = entrySectionRef.current
     if (entry != null) {
       const rect = entry.getBoundingClientRect()
-      console.log(rect.top)
       if (rect.top <= -150) {
         setHeader(true)
       } else {
