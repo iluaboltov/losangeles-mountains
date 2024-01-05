@@ -241,7 +241,10 @@ ol li:hover:after{
         top: -0.2em;
         left: -1.09em;
     }
-    .schedule-navigation{
+    section.mountain-schedule{
+        height: 80vh;
+    }
+    div.schedule-navigation{
         padding: 0;
     }
     div.schedule-container{
@@ -369,6 +372,9 @@ ol li:hover:after{
     .climb-article{
         width: 40%;
         padding: 0 0 0 1.4em;
+    }
+    section.mountain-schedule{
+        height: 100vh;
     }
     div.schedule-container{
         top: 20%;
